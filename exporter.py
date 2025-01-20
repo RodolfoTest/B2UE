@@ -16,11 +16,11 @@ bl_info = {
         "name":  "B2UE Scene Exporter",
         "author":  "Rodolfo Barcelli Jo",
         "description":  "Export Scenes to Unreal Live",
-        "version": (1,1,0),
+        "version": (1, 1, 0),
         "location":  "View3D > Sidebar > B2UE",
         "category":  "B2UE",
         "support":  "COMMUNITY",
-        "blender":  (4,3,2)
+        "blender":  (4, 2, 3)
         }
 
 class B2UE_UI(bpy.types.Panel):
