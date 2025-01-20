@@ -1,0 +1,48 @@
+#+TITLE: Blender to UE Asset Importer
+#+AUTHOR: Rodolfo Barcelli Jo
+
+* Introduction
+This project is designed to import a whole scene into Unreal from Blender while avoiding the limitation of the whole scene being one FBX Mesh.
+
+* Usage
+** Blender
+*WARNING:* The script will export all the unique meshes in your scene and a location_data.csv to the same folder that your blend file is saved in. Therefore, please make sure that you have saved your blend file before running the script.
+
+Select all the objects in the scene that you want to export. Press Alt+p and select "Clear and Keep Transform". This is a necessary step for the exporting process
+
+Open a text editor window in blender and load the exporter.py script
+
+[[file:./images/1.png]]
+
+[[file:./images/2.png]]
+
+Select all items that you want to export and press the play button next to the script name. You should experience a freeze and blender will export all the unique meshes as well as create a location_data.csv file.
+
+[[file:./images/3.png]]
+
+** Unreal
+Create a folder called "Python" in your Content folder and place the importer.py script there. (If you have the engine open you will have to restart it)
+
+[[file:./images/4.png]]
+
+Make a folder for your static meshes and place the location_data.csv file in that folder
+
+[[file:./images/8.png]]
+
+Start the engine and import all the exported FBX files to this folder. Make sure that Uniform Scale is set to 1 in the FBX Importer and if you want materials that Create New Material is set
+
+[[file:./images/5.png]]
+
+In the command prompt, input the following command ~importer.py /Path/To/Your/Folder~
+*NOTE: Remember to replace the path wit the path of the static meshes as shown below*
+
+[[file:./images/6.png]]
+
+After the script is run your scene should be loaded in a level called import. You can copy this over to another level or add the level as a sublevel to an existing level
+
+[[file:./images/7.png]]
+
+* Road Map
+** [ ] Python Socket Server (Blender Side)
+** [ ] Python Socket Client (Unreal Side)
+** [ ] Database Integration and Diff Management
